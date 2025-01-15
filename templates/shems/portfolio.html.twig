@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon E-Portfolio{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="mb-4">E-Portfolio de Compétences</h1>
+
+    <!-- SAÉ Section -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>SAÉ (Situations d'Apprentissage et d'Évaluation)</h2>
+        </div>
+        <div class="card-body">
+            <!-- SAÉ Cards -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">SAÉ 1.01</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Titre de la SAÉ</h6>
+                            <p class="card-text">Description de la SAÉ et des compétences acquises.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Compétence 1</li>
+                                <li class="list-group-item">Compétence 2</li>
+                                <li class="list-group-item">Compétence 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres SAÉ de la même manière -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Compétences Techniques -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Compétences Techniques</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Administration Systèmes -->
+                <div class="col-md-4 mb-3">
+                    <h4>Administration Systèmes</h4>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 75%">Linux</div>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 60%">Windows Server</div>
+                    </div>
+                </div>
+
+                <!-- Réseaux -->
+                <div class="col-md-4 mb-3">
+                    <h4>Réseaux</h4>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 70%">TCP/IP</div>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 65%">Cisco</div>
+                    </div>
+                </div>
+
+                <!-- Développement -->
+                <div class="col-md-4 mb-3">
+                    <h4>Développement</h4>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 80%">Python</div>
+                    </div>
+                    <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 75%">PHP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projets Réalisés -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Projets Réalisés</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Nom du Projet 1</h5>
+                            <p class="card-text">Description du projet et des compétences mises en œuvre.</p>
+                            <p class="card-text"><small class="text-muted">Technologies utilisées : XXX, YYY, ZZZ</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Nom du Projet 2</h5>
+                            <p class="card-text">Description du projet et des compétences mises en œuvre.</p>
+                            <p class="card-text"><small class="text-muted">Technologies utilisées : AAA, BBB, CCC</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

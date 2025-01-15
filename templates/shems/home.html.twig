@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - {{ nom }} {{ prenom }}{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">{{ nom }} {{ prenom }}</h1>
+                    <h3 class="card-subtitle mb-3 text-muted">Groupe {{ groupe }}</h3>
+                    <p class="card-text">Étudiant passionné par les nouvelles technologies et le développement web, je suis actuellement en formation pour devenir un expert en réseaux et télécommunications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h2>Pour en savoir plus</h2>
+            </div>
+            <div class="card-body">
+                <p>Découvrez mes passions et centres d'intérêt à travers une galerie de photos.</p>
+                <a href="{{ path('app_loisirs') }}" class="btn btn-primary">Voir mes loisirs</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

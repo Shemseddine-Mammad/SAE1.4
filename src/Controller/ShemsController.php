@@ -8,19 +8,31 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ShemsController extends AbstractController
 {
-    #[Route('/shems', name: 'app_shems')]
-    public function index(): Response
+    #[Route('/', name: 'app_home')]
+    public function home(): Response
     {
-        return $this->render('shems/index.html.twig', [
-            'controller_name' => 'ShemsController',
+        return $this->render('shems/home.html.twig', [
+            'nom' => 'VOTRE_NOM',
+            'prenom' => 'VOTRE_PRENOM',
+            'groupe' => 'VOTRE_GROUPE_TP',
         ]);
     }
-    #[Route('/shems/home2', name: 'app_home')]
-    Public function home2() : Response
-    { 
-        return $this->render('shems/home2.html.twig', [
-            'controller_name' => 'ShemsController',
-        ]); 
+
+    #[Route('/cv', name: 'app_cv')]
+    public function cv(): Response
+    {
+        return $this->render('shems/cv.html.twig');
+    }
+
+    #[Route('/portfolio', name: 'app_portfolio')]
+    public function portfolio(): Response
+    {
+        return $this->render('shems/portfolio.html.twig');
+    }
+
+    #[Route('/loisirs', name: 'app_loisirs')]
+    public function loisirs(): Response
+    {
+        return $this->render('shems/loisirs.html.twig');
     }
 }
- 
