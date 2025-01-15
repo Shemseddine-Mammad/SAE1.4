@@ -15,13 +15,11 @@ class ShemsController extends AbstractController
             'controller_name' => 'ShemsController',
         ]);
     }
-    #[Route('/shems/home', name: 'app_home')]
-    Public function home() : response
+    #[Route('/shems/home2', name: 'app_home')]
+    Public function home2() : Response
     { 
-        return $this->render('shems/home.html.twig', [
+        return $this->render('shems/home2.html.twig', [
             'controller_name' => 'ShemsController',
-            'title' => "bienvenue",
-            'age' => 15
         ]); 
     }
 }
