@@ -6,7 +6,7 @@
 <div class="container mt-4">
     <div class="card mb-4">
         <div class="card-header">
-            <h1 class="text-center">Ingénieur Réseaux et Télécommunications</h1>
+            <h1 class="text-center">Bachelor en Réseaux et Télécommunications</h1>
         </div>
     </div>
 
@@ -17,9 +17,8 @@
         <div class="card-body">
             <ul class="list-unstyled">
                 <li class="mb-3">
-                    <h5>Obtention bacaloréat général spécialité mathématique et numérique science de l'informatique</h5>
+                    <h5>Obtention du baccalauréat général avec spécialités Mathématiques et Numérique et Sciences Informatiques (NSI).</h5>
                     <h5>Première année en BUT Réseaux et Télécommunications</h5>
-                    <p class="text-muted">2023 - Présent</p>
                 </li>
                 <!-- Ajoutez d'autres formations -->
             </ul>
@@ -31,30 +30,89 @@
             <h2>Expériences Professionnelles</h2>
         </div>
         <div class="card-body">
-            <!-- Ajoutez vos expériences -->
+            <h5>stage de troisième</h5>
+            <h5>J'ai réalisé mon stage de troisième dans une entreprise Roannaise</h5>
+            <h5> Stériflow - 24/02/2020 : 28 /02/2020 </h5>
         </div>
     </div>
 
     <div class="card">
         <div class="card-header">
-            <h2>Compétences</h2>
+            <h2>Langues</h2>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    <h4>Techniques</h4>
-                    <!-- Ajoutez vos compétences techniques -->
+                      <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 100%">Français</div>
+                        </div>
+                     <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 75%">Anglais</div>
+                        </div>
+
+                      <div class="progress mb-2">
+                        <div class="progress-bar" role="progressbar" style="width: 50%">Espagnol</div>   
+                        </div>
                 </div>
-                <div class="col-md-4">
-                    <h4>Langues</h4>
-                    <!-- Ajoutez vos compétences linguistiques -->
+            </div>
+        </div>
+    </div>
+    
+</div>
+    </div>
+
+    <div class="d-grid gap-2 mt-4">
+        <button class="btn btn-lg btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#cvModal">
+            Télécharger le CV
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cvModalLabel">Choisir le format</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="col-md-4">
-                    <h4>Soft Skills</h4>
-                    <!-- Ajoutez vos soft skills -->
+                <div class="modal-body">
+                    <form id="cvDownloadForm">
+                        <div class="mb-3">
+                            <label for="selectedFormat" class="form-label">Format du CV</label>
+                            <select class="form-select" id="selectedFormat">
+                                <option value="pdf">PDF</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Télécharger</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+{% block javascripts %}
+<script>
+document.getElementById('cvDownloadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const format = document.getElementById('selectedFormat').value;
+    const filePath = `/cv/CV.${format}`;
+
+    // Crée un élément <a> temporaire pour déclencher le téléchargement
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = `cv.${format}`; // Nom du fichier téléchargé
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Ferme le modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('cvModal'));
+    modal.hide();
+});
+</script>
+{% endblock %}
 {% endblock %}

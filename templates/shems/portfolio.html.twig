@@ -5,34 +5,7 @@
 {% block body %}
 <div class="container mt-4">
     <h1 class="mb-4">E-Portfolio de Compétences</h1>
-
-    <!-- SAÉ Section -->
-    <div class="card mb-4">
-        <div class="card-header">
-            <h2>SAÉ (Situations d'Apprentissage et d'Évaluation)</h2>
-        </div>
-        <div class="card-body">
-            <!-- SAÉ Cards -->
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">SAÉ 1.01</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Titre de la SAÉ</h6>
-                            <p class="card-text">Description de la SAÉ et des compétences acquises.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Compétence 1</li>
-                                <li class="list-group-item">Compétence 2</li>
-                                <li class="list-group-item">Compétence 3</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Ajoutez d'autres SAÉ de la même manière -->
-            </div>
-        </div>
-    </div>
-
+    
     <!-- Compétences Techniques -->
     <div class="card mb-4">
         <div class="card-header">
@@ -75,34 +48,114 @@
             </div>
         </div>
     </div>
+    
+    <!-- Style pour les cartes qui se retournent -->
+    <style>
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 15px;
+        }
 
-    <!-- Projets Réalisés -->
-    <div class="card">
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flip-card.is-flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .flip-card-front {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .flip-card-back {
+            background-color: #0056b3;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+
+    <!-- Section des cartes qui se retournent -->
+    <div class="card mb-4">
         <div class="card-header">
-            <h2>Projets Réalisés</h2>
+            <h2>Mes Projets</h2>
         </div>
         <div class="card-body">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Nom du Projet 1</h5>
-                            <p class="card-text">Description du projet et des compétences mises en œuvre.</p>
-                            <p class="card-text"><small class="text-muted">Technologies utilisées : XXX, YYY, ZZZ</small></p>
+            <div class="d-flex justify-content-center flex-wrap">
+                <!-- Première carte -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Algorithme</h3>
+                            <p>Programmation</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <a href="{{ asset('preuve/AC13_03Traduire_un_algorithme_dans_un_langage_et_pour_un_environnement_donné.pdf') }}" target="_blank"> <h3>Preuve</h3> </a>
+                            <p>Traduction d'algorithme en Python </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Nom du Projet 2</h5>
-                            <p class="card-text">Description du projet et des compétences mises en œuvre.</p>
-                            <p class="card-text"><small class="text-muted">Technologies utilisées : AAA, BBB, CCC</small></p>
+
+                <!-- Deuxième carte -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Machine Virtuelle </h3>
+                            <p>Configuration</p>
+                        </div>
+                        <div class="flip-card-back">
+                        <a href="{{ asset('preuve/AC11_06.pdf') }}" target="_blank"> <h3>Preuve</h3> </a>
+                            <p>client Ubuntu, Client Windows 7, serveur Ubuntu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troisième carte -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Système D'Exploitations</h3>
+                            <p>Terminal</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <a href="{{ asset('preuve/AC13_01.pdf') }}" target="_blank"> <h3>Preuve</h3> </a>
+                            <p>Utilisation de différente commande dans des terminals Linux ou Windows</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Script pour le retournement des cartes -->
+    <script>
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('is-flipped');
+            });
+        });
+    </script>
 </div>
 {% endblock %}
