@@ -3,70 +3,143 @@
 {% block title %}Mon CV{% endblock %}
 
 {% block body %}
-<div class="container mt-4">
-    <div class="card mb-4">
-        <div class="card-header">
-            <h1 class="text-center">Bachelor en Réseaux et Télécommunications</h1>
+<div class="container mt-5">
+    <!-- Profile Header -->
+    <div class="row mb-5">
+        <div class="col-md-4 text-center">
+            <!-- Replace with your actual photo path -->
+            <img src="{{ asset('images/profile-photo.jpg') }}" alt="Photo de profil" 
+                 class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
+        </div>
+        <div class="col-md-8">
+            <h1 class="display-4 fw-bold">MAMMAD Shemseddine</h1>
+            <h2 class="text-primary mb-3">Bachelor en Réseaux et Télécommunications</h2>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+                <span class="badge bg-light text-dark p-2"><i class="bi bi-envelope"></i> shemseddine.mammad@gmail.com</span>
+                <span class="badge bg-light text-dark p-2"><i class="bi bi-telephone"></i> 07 69 43 85 72</span>
+                <span class="badge bg-light text-dark p-2"><i class="bi bi-geo-alt"></i> Saint-Priest 69800, France</span>
+            </div>
+            <p class="lead">Étudiant en première année de formation supérieure en Réseaux et Télécommunications à Université Jean Monnet, passionné par les technologies de l'information et les systèmes de communication. Je cherche à développer mes compétences en administration réseau, cybersécurité et télécommunications grâce à des projets pratiques.
+</p>
         </div>
     </div>
 
-    <div class="card mb-4">
-        <div class="card-header">
-            <h2>Formations</h2>
-        </div>
-        <div class="card-body">
-            <ul class="list-unstyled">
-                <li class="mb-3">
-                    <h5>Obtention du baccalauréat général avec spécialités Mathématiques et Numérique et Sciences Informatiques (NSI).</h5>
-                    <h5>Première année en BUT Réseaux et Télécommunications</h5>
-                </li>
-                <!-- Ajoutez d'autres formations -->
-            </ul>
-        </div>
-    </div>
+    <!-- Main Content Sections -->
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Formation Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0"><i class="bi bi-mortarboard-fill me-2"></i>Formations</h2>
+                </div>
+                <div class="card-body">
+                    <div class="timeline">
+                        <div class="timeline-item mb-4">
+                            <h5 class="fw-bold">BUT Réseaux et Télécommunications</h5>
+                            <p class="text-muted mb-1"><i class="bi bi-calendar-event me-2"></i>2024 - Présent</p>
+                            <p>Première année en BUT Réseaux et Télécommunications</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="fw-bold">Baccalauréat Général</h5>
+                            <p class="text-muted mb-1"><i class="bi bi-calendar-event me-2"></i>2022-2023</p>
+                            <p>Spécialités Mathématiques et Numérique et Sciences Informatiques (NSI)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="card mb-4">
-        <div class="card-header">
-            <h2>Expériences Professionnelles</h2>
+            <!-- Experience Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0"><i class="bi bi-briefcase-fill me-2"></i>Expériences Professionnelles</h2>
+                </div>
+                <div class="card-body">
+                    <div class="timeline-item">
+                        <h5 class="fw-bold">Stage d'observation - Stériflow</h5>
+                        <p class="text-muted mb-1"><i class="bi bi-calendar-event me-2"></i>24/02/2020 - 28/02/2020</p>
+                        <p>Stage de troisième dans une entreprise Roannaise</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="fw-bold">Bénévole - Génération Gagnante </h5>
+                        <p class="text-muted mb-1"><i class="bi bi-calendar-event me-2"></i>09/2019 – 11/2024</p>
+                        <p>Gestion de projets</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="fw-bold">Entraineur et arbitre taekwondo - Taekwondo Saint-Priest 69800</h5>
+                        <p class="text-muted mb-1"><i class="bi bi-calendar-event me-2"></i>09/2023 – 09/2024</p>
+                        <p>Organisation et installation d'événement sportif </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <h5>stage de troisième</h5>
-            <h5>Réalisation d'un stage d'observation dans une entreprise Roannaise</h5>
-            <h5> Stériflow - 24/02/2020 : 28 /02/2020 </h5>
-        </div>
-    </div>
 
-    <div class="card">
-        <div class="card-header">
-            <h2>Langues</h2>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-4">
-                      <div class="progress mb-2">
-                        <div class="progress-bar language-bar" data-width="100" role="progressbar" style="width: 0%">Français</div>
-                      </div>
-                     <div class="progress mb-2">
-                        <div class="progress-bar language-bar" data-width="75" role="progressbar" style="width: 0%">Anglais</div>
-                      </div>
-                      <div class="progress mb-2">
-                        <div class="progress-bar language-bar" data-width="50" role="progressbar" style="width: 0%">Espagnol</div>   
-                      </div>
+        <div class="col-lg-4">
+            <!-- Languages Section -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0"><i class="bi bi-translate me-2"></i>Langues</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Français</span>
+                            <span>Natif</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar language-bar" data-width="100" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Anglais</span>
+                            <span>Avancé</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar language-bar" data-width="75" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-bold">Espagnol</span>
+                            <span>Intermédiaire</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar language-bar" data-width="50" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section (new) -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0"><i class="bi bi-tools me-2"></i>Compétences</h2>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-secondary p-2">Réseaux</span>
+                        <span class="badge bg-secondary p-2">Programmation</span>
+                        <span class="badge bg-secondary p-2">Linux</span>
+                        <span class="badge bg-secondary p-2">Windows</span>
+                        <span class="badge bg-secondary p-2">Cisco</span>
+                        <span class="badge bg-secondary p-2">HTML/CSS</span>
+                        <span class="badge bg-secondary p-2">JavaScript</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
-</div>
-    </div>
 
-    <div class="d-grid gap-2 mt-4">
+    <!-- Download Button -->
+    <div class="d-grid gap-2 mt-5">
         <button class="btn btn-lg btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#cvModal">
-            Télécharger le CV
+            <i class="bi bi-download me-2"></i>Télécharger le CV
         </button>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal (unchanged) -->
     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -92,7 +165,7 @@
                             <label for="selectedFormat" class="form-label">Format du CV</label>
                             <select class="form-select" id="selectedFormat">
                                 <option value="pdf">PDF</option>
-                                <option value="png">PNG</option> <!-- Nouvelle option pour le format PNG -->
+                                <option value="png">PNG</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Télécharger</button>
@@ -102,7 +175,6 @@
         </div>
     </div>
 </div>
-
 
 {% block javascripts %}
 <script>

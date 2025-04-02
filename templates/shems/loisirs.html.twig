@@ -1,98 +1,205 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mes Loisirs{% endblock %}
+{% block title %}Mes Passions & Loisirs{% endblock %}
 
 {% block body %}
-<div class="container mt-4">
-    <h1 class="mb-4">Mes Loisirs</h1>
-    
-    <style>
-        /* Styles pour l'animation des cartes */
-        .hobby-card {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease-out, transform 0.8s ease-out;
-        }
-        
-        .hobby-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Animation de survol pour les cartes */
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 3px solid #dee2e6; /* Contour plus épais */
-            border-radius: 8px; /* Légèrement arrondir les coins */
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-            border-color: #6c757d; /* Contour plus foncé au survol */
-        }
-        
-        /* Pour s'assurer que l'image reste à taille raisonnable */
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 3px solid #dee2e6; /* Séparation entre image et contenu */
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-    </style>
-    
-    <div class="row">
-        <!-- Carte pour le premier loisir -->
-        <div class="col-md-4 mb-4 hobby-card">
-            <div class="card h-100">
-                <img src="{{ asset('image/logo_tkd.png') }}" class="card-img-top" alt="loisir 1">
-                <div class="card-body">
-                    <h5 class="card-title">Taekwondo</h5>
-                    <p class="card-text">Depuis petit j'ai toujours pratiqué des sports de combats comme le Taekwondo ou le Grappling.</p>
-                    <p>Cela fait 9 ans que je pratique le Taekwondo.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carte pour le deuxième loisir -->
-        <div class="col-md-4 mb-4 hobby-card">
-            <div class="card h-100">
-                <img src="{{ asset('image/voyage.jpg') }}" class="card-img-top" alt="loisir 2">
-                <div class="card-body">
-                    <h5 class="card-title">Voyager</h5>
-                    <p class="card-text">Passionné par les découvertes, j'adore voyager pour découvrir de nouvelles cultures, m'immerger dans différentes cultures et élargir mes perspectives.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carte pour le troisième loisir -->
-        <div class="col-md-4 mb-4 hobby-card">
-            <div class="card h-100">
-                <img src="{{ asset('image/jeu-video-visu.jpg') }}" class="card-img-top" alt="loisir 3">
-                <div class="card-body">
-                    <h5 class="card-title">Jeux vidéos</h5>
-                    <p class="card-text">Passionné par les jeux vidéo, j'aime plonger dans des univers immersifs, relever des défis captivants et partager des expériences avec d'autres joueurs.</p>
-                </div>
+<!-- Hero Banner -->
+<div class="hobby-banner py-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-4 fw-bold text-white mb-3">Mes Passions</h1>
+                <p class="lead text-white mb-0">Découvrez ce qui me passionne en dehors du monde professionnel</p>
             </div>
         </div>
     </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sélectionne toutes les cartes de loisir
-            const hobbyCards = document.querySelectorAll('.hobby-card');
-            
-            // Attendre un court instant avant de commencer l'animation
-            setTimeout(function() {
-                // Animer chaque carte avec un délai
-                hobbyCards.forEach(function(card, index) {
-                    setTimeout(function() {
-                        card.classList.add('visible');
-                    }, index * 300); // 300ms de délai entre chaque carte
-                });
-            }, 200); // Démarrer après 200ms
-        });
-    </script>
 </div>
+
+<div class="container mb-5">
+    <!-- Introduction -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+            <p class="lead">Les activités qui me permettent de me ressourcer, d'apprendre et de m'épanouir en dehors de mon parcours académique et professionnel.</p>
+        </div>
+    </div>
+
+    <!-- Hobbies Cards Section -->
+    <div class="row">
+        <!-- Taekwondo Card -->
+        <div class="col-lg-4 mb-4 hobby-card">
+            <div class="card hobby-card-inner h-100">
+                <div class="card-header bg-primary text-white py-3">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-stars me-2"></i>Taekwondo
+                    </h5>
+                </div>
+                <img src="{{ asset('image/logo_tkd.png') }}" class="card-img-top" alt="Taekwondo">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="badge bg-secondary me-2">9 ans d'expérience</span>
+                        <span class="badge bg-info">Sport de combat</span>
+                    </div>
+                    <p class="card-text">Depuis petit j'ai toujours pratiqué des sports de combats comme le Taekwondo ou le Grappling. Cette discipline m'a enseigné la persévérance, le respect et la maîtrise de soi.</p>
+                </div>
+                <!-- Suppression de la bande (card-footer) -->
+            </div>
+        </div>
+
+        <!-- Voyages Card -->
+        <div class="col-lg-4 mb-4 hobby-card">
+            <div class="card hobby-card-inner h-100">
+                <div class="card-header bg-success text-white py-3">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-globe me-2"></i>Voyager
+                    </h5>
+                </div>
+                <img src="{{ asset('image/voyage.jpg') }}" class="card-img-top" alt="Voyage">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="badge bg-secondary me-2">Découverte</span>
+                        <span class="badge bg-info">Cultures</span>
+                    </div>
+                    <p class="card-text">Passionné par les découvertes, j'adore voyager pour découvrir de nouvelles cultures, m'immerger dans différentes traditions et élargir mes perspectives sur le monde.</p>
+                </div>
+                <!-- Suppression de la bande (card-footer) -->
+            </div>
+        </div>
+
+        <!-- Jeux vidéo Card -->
+        <div class="col-lg-4 mb-4 hobby-card">
+            <div class="card hobby-card-inner h-100">
+                <div class="card-header bg-danger text-white py-3">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-controller me-2"></i>Jeux vidéo
+                    </h5>
+                </div>
+                <img src="{{ asset('image/jeu-video-visu.jpg') }}" class="card-img-top" alt="Jeux vidéo">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="badge bg-secondary me-2">Divertissement</span>
+                        <span class="badge bg-info">Stratégie</span>
+                    </div>
+                    <p class="card-text">Passionné par les jeux vidéo, j'aime plonger dans des univers immersifs, relever des défis captivants et partager des expériences avec d'autres joueurs du monde entier.</p>
+                </div>
+                <!-- Suppression de la bande (card-footer) -->
+            </div>
+        </div>
+    </div>
+<style>
+    /* Hero Banner Background */
+    .hobby-banner {
+        background: linear-gradient(to right, #343a40, #495057);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hobby-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('{{ asset('image/hobbies-pattern.png') }}') repeat;
+        opacity: 0.1;
+        z-index: 0;
+    }
+    
+    .hobby-banner > .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Card styling */
+    .hobby-card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1s ease-out, transform 0.8s ease-out;
+    }
+    
+    .hobby-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .hobby-card-inner {
+        transition: transform 0.4s, box-shadow 0.4s;
+        border: none;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hobby-card-inner:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-header {
+        border-bottom: none;
+        border-radius: 0;
+    }
+    
+    /* Image styling */
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.6s;
+    }
+    
+    .hobby-card-inner:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    
+    /* Badge styling */
+    .badge {
+        font-weight: 500;
+        padding: 0.5em 0.8em;
+    }
+    
+    /* Footer styles */
+    .card-footer {
+        background-color: transparent;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Quote styling */
+    blockquote {
+        font-style: italic;
+        color: #495057;
+    }
+    
+    /* Button styling */
+    .btn-outline-primary, .btn-outline-success, .btn-outline-danger {
+        border-width: 2px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animation d'entrée pour les cartes
+        const hobbyCards = document.querySelectorAll('.hobby-card');
+        
+        // Observer pour détecter quand les cartes sont visibles
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Ajouter un délai pour l'animation en cascade
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 200);
+                    
+                    // Arrêter d'observer une fois visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2 // Déclencher quand 20% de l'élément est visible
+        });
+        
+        // Observer chaque carte
+        hobbyCards.forEach(card => {
+            observer.observe(card);
+        });
+    });
+</script>
 {% endblock %}

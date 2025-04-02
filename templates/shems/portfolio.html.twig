@@ -1,205 +1,416 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon E-Portfolio{% endblock %}
+{% block title %}Mon Portfolio - Shemseddine MAMMAD{% endblock %}
 
 {% block body %}
-<div class="container mt-4">
-    <h1 class="mb-4">E-Portfolio de Compétences</h1>
+<!-- Hero Section - Redesigned without profile photo -->
+<div class="hero-section position-relative bg-dark text-white py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-4 fw-bold mb-3">Shemseddine MAMMAD</h1>
+                <h2 class="h3 text-primary mb-4">Étudiant en Réseaux et Télécommunications</h2>
+                <p class="lead mb-4">Portfolio professionnel présentant mes compétences, projets et parcours dans le domaine des réseaux et systèmes informatiques.</p>
+                <a href="#competences" class="btn btn-primary btn-lg">Découvrir mes compétences</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <!-- À propos -->
+    <section class="mb-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="section-title position-relative pb-3 mb-4">
+                            <span class="badge bg-primary me-2">01</span>À propos de moi
+                        </h2>
+                        <p class="lead">Étudiant passionné par les technologies de l'information et la cybersécurité, je poursuis actuellement un BUT en Réseaux et Télécommunications.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i> Saint-Priest 69800, France</li>
+                                    <li class="mb-2"><i class="bi bi-envelope text-primary me-2"></i> shemseddine.mammad@gmail.com</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-mortarboard text-primary me-2"></i> BUT Réseaux et Télécommunications</li>
+                                    <li class="mb-2"><i class="bi bi-github text-primary me-2"></i> https://github.com/shems698</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Compétences Techniques -->
-    <div class="card mb-4">
-        <div class="card-header">
-            <h2>Compétences Techniques</h2>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <!-- Administration Systèmes -->
-                <div class="col-md-4 mb-3">
-                    <h4>Administration Systèmes</h4>
-                    <div class="progress mb-2">
-                        <div class="progress-bar skills-bar" data-width="80" role="progressbar" style="width: 0%">Linux</div>
+    <section id="competences" class="mb-5">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="section-title position-relative pb-3 mb-4">
+                    <span class="badge bg-primary me-2">02</span>Compétences Techniques
+                </h2>
+                <div class="row">
+                    <!-- Administration Systèmes -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="skill-category p-3 h-100 border rounded">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-hdd-network fs-3 text-primary me-3"></i>
+                                <h4 class="m-0">Administration Systèmes</h4>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-bold">Linux</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar skills-bar" data-width="80" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-bold">Windows Server</span>
+                                    <span>50%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar skills-bar" data-width="50" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="progress mb-2">
-                        <div class="progress-bar skills-bar" data-width="50" role="progressbar" style="width: 0%">Windows Server</div>
-                    </div>
-                </div>
 
-                <!-- Réseaux -->
-                <div class="col-md-4 mb-3">
-                    <h4>Réseaux</h4>
-                    <div class="progress mb-2">
-                        <div class="progress-bar skills-bar" data-width="50" role="progressbar" style="width: 0%">TCP/IP</div>
+                    <!-- Réseaux -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="skill-category p-3 h-100 border rounded">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-diagram-3 fs-3 text-primary me-3"></i>
+                                <h4 class="m-0">Réseaux</h4>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-bold">TCP/IP</span>
+                                    <span>50%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar skills-bar" data-width="50" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-bold">Cisco</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar skills-bar" data-width="75" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="progress mb-2">
-                        <div class="progress-bar skills-bar" data-width="75" role="progressbar" style="width: 0%">Cisco</div>
-                    </div>
-                </div>
 
-                <!-- Développement -->
-                <div class="col-md-4 mb-3">
-                    <h4>Développement</h4>
-                    <div class="progress mb-2">
-                        <div class="progress-bar skills-bar" data-width="80" role="progressbar" style="width: 0%">Python</div>
-                    </div>
-                    <div class="progress mb-2">
-                        <div class="progress-bar skills-bar" data-width="20" role="progressbar" style="width: 0%">C</div>
+                    <!-- Développement -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="skill-category p-3 h-100 border rounded">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-code-square fs-3 text-primary me-3"></i>
+                                <h4 class="m-0">Développement</h4>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-bold">Python</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar skills-bar" data-width="80" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="fw-bold">C</span>
+                                    <span>20%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar skills-bar" data-width="20" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
-    <!-- Style pour les cartes qui se retournent et les animations -->
-    <style>
-        .flip-card {
-            background-color: transparent;
-            width: 300px;
-            height: 200px;
-            perspective: 1000px;
-            margin: 15px;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .flip-card.is-flipped .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .flip-card-front {
-            background-color: #000; /* Couleur noire */
-            color: white;
-        }
-
-        .flip-card-back {
-            background-color: #000; /* Couleur noire */
-            color: white;
-            transform: rotateY(180deg);
-        }
-
-        .skills-bar {
-            transition: width 2s;
-        }
-        
-        /* Style pour le bouton dans les cartes */
-        .card-button {
-            margin-top: 15px;
-            padding: 8px 15px;
-            background-color: #0d6efd;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .card-button:hover {
-            background-color: #0b5ed7;
-            text-decoration: none;
-            color: white;
-        }
-    </style>
-
-    <!-- Section des cartes qui se retournent -->
-    <div class="card mb-4">
-        <div class="card-header">
-            <h2>Apprentissage Critiques</h2>
-        </div>
-        <div class="card-body">
-            <div class="d-flex justify-content-center flex-wrap">
-                <!-- Première carte -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>Algorithme</h3>
-                            <p>Programmation</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Preuve</h3>
-                            <p>Traduction d'algorithme en Python</p>
-                            <a href="{{ asset('preuve/AC13_03Traduire_un_algorithme_dans_un_langage_et_pour_un_environnement_donné.pdf') }}" 
-                               class="card-button" target="_blank">Voir le document</a>
+    <!-- Apprentissage Critiques -->
+    <section class="mb-5">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="section-title position-relative pb-3 mb-4">
+                    <span class="badge bg-primary me-2">03</span>Apprentissages Critiques
+                </h2>
+                <div class="row">
+                    <!-- Première carte -->
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card h-100">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front d-flex flex-column justify-content-center">
+                                        <i class="bi bi-code-slash text-primary mb-3" style="font-size: 2.5rem;"></i>
+                                        <h3>Algorithme</h3>
+                                        <p class="text-muted">Programmation Python</p>
+                                        <span class="flip-hint mt-3"><i class="bi bi-arrow-repeat"></i> Cliquez pour plus d'infos</span>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="mb-3">Traduction d'algorithme</h3>
+                                        <p>Implémentation d'algorithmes complexes en Python en respectant les bonnes pratiques de programmation.</p>
+                                        <a href="{{ asset('preuve/AC13_03Traduire_un_algorithme_dans_un_langage_et_pour_un_environnement_donné.pdf') }}" 
+                                           class="card-button" target="_blank">Voir le document</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Deuxième carte -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>Machine Virtuelle</h3>
-                            <p>Configuration</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Preuve</h3>
-                            <p>client Ubuntu, Client Windows 7, serveur Ubuntu</p>
-                            <a href="{{ asset('preuve/AC11_06.pdf') }}" 
-                               class="card-button" target="_blank">Voir le document</a>
+                    <!-- Deuxième carte -->
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card h-100">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front d-flex flex-column justify-content-center">
+                                        <i class="bi bi-pc-display text-primary mb-3" style="font-size: 2.5rem;"></i>
+                                        <h3>Machine Virtuelle</h3>
+                                        <p class="text-muted">Configuration avancée</p>
+                                        <span class="flip-hint mt-3"><i class="bi bi-arrow-repeat"></i> Cliquez pour plus d'infos</span>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="mb-3">Configuration multi-OS</h3>
+                                        <p>Mise en place et configuration d'environnements virtuels avec Ubuntu et Windows 7.</p>
+                                        <a href="{{ asset('preuve/AC11_06.pdf') }}" 
+                                           class="card-button" target="_blank">Voir le document</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Troisième carte -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>Système D'Exploitations</h3>
-                            <p>Terminal</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Preuve</h3>
-                            <p>Utilisation de différente commande dans des terminals Linux ou Windows</p>
-                            <a href="{{ asset('preuve/AC13_01.pdf') }}" 
-                               class="card-button" target="_blank">Voir le document</a>
+                    <!-- Troisième carte -->
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card h-100">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front d-flex flex-column justify-content-center">
+                                        <i class="bi bi-terminal text-primary mb-3" style="font-size: 2.5rem;"></i>
+                                        <h3>Système D'Exploitations</h3>
+                                        <p class="text-muted">Commandes avancées</p>
+                                        <span class="flip-hint mt-3"><i class="bi bi-arrow-repeat"></i> Cliquez pour plus d'infos</span>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3 class="mb-3">Administration par CLI</h3>
+                                        <p>Maîtrise des commandes avancées dans les terminaux Linux et Windows.</p>
+                                        <a href="{{ asset('preuve/AC13_01.pdf') }}" 
+                                           class="card-button" target="_blank">Voir le document</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Script pour le retournement des cartes -->
-    <script>
+    <!-- Contact Section -->
+    <section class="mb-5">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="section-title position-relative pb-3 mb-4">
+                    <span class="badge bg-primary me-2">04</span>Me contacter
+                </h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>N'hésitez pas à me contacter pour discuter de projets, opportunités ou simplement échanger sur les technologies.</p>
+                        <ul class="list-unstyled contact-info">
+                            <li class="mb-3">
+                                <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                <a href="mailto:shemseddine.mammad@gmail.com">shemseddine.mammad@gmail.com</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-linkedin text-primary me-2"></i>
+                                <a href="#">linkedin.com/in/shemseddine-mammad</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                Saint-Priest, France
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Votre nom">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Votre email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Votre message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Style pour les cartes qui se retournent et les animations -->
+<style>
+    /* Hero Section - Updated for centered content without photo */
+    .hero-section {
+        background: linear-gradient(135deg, #000000 0%, #212529 100%);
+        padding: 100px 0; /* Increased padding to compensate for removed photo */
+    }
+    
+    /* Section titles */
+    .section-title {
+        border-bottom: 2px solid rgba(0,0,0,0.1);
+    }
+    
+    /* Skill categories */
+    .skill-category {
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+    
+    .skill-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    /* Progress bars */
+    .progress {
+        height: 10px;
+        background-color: #e9ecef;
+    }
+    
+    .skills-bar {
+        background-color: #0d6efd;
+        transition: width 1.5s ease-in-out;
+    }
+    
+    /* Flip cards */
+    .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 300px;
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+
+    .flip-card.is-flipped .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .flip-card-front {
+        background-color: white;
+        color: #333;
+        border: 1px solid #eee;
+    }
+
+    .flip-card-back {
+        background-color: #0d6efd;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+    .flip-hint {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+    
+    /* Contact section */
+    .contact-info a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+        color: #0d6efd;
+    }
+    
+    /* Card button */
+    .card-button {
+        margin-top: 15px;
+        padding: 8px 15px;
+        background-color: #fff;
+        color: #0d6efd;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+        display: inline-block;
+    }
+    
+    .card-button:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-decoration: none;
+        color: #0b5ed7;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animation pour les barres de compétences
+        setTimeout(function() {
+            const skillsBars = document.querySelectorAll('.skills-bar');
+            
+            skillsBars.forEach(function(bar, index) {
+                const targetWidth = bar.getAttribute('data-width') + '%';
+                
+                // Animation avec délai progressif pour chaque barre
+                setTimeout(function() {
+                    bar.style.width = targetWidth;
+                }, index * 200);
+            });
+        }, 500);
+        
+        // Gestion des cartes flip
         document.querySelectorAll('.flip-card').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('is-flipped');
             });
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                const skillsBars = document.querySelectorAll('.skills-bar');
-                
-                skillsBars.forEach(function(bar, index) {
-                    const targetWidth = bar.getAttribute('data-width') + '%';
-                    
-                    // Animation avec délai progressif pour chaque barre
-                    setTimeout(function() {
-                        bar.style.width = targetWidth;
-                    }, index * 200); // 200ms de délai entre chaque animation
-                });
-            }, 500); // Démarrer l'animation après 500ms du chargement de la page
         });
         
         // Empêcher la propagation des clics sur les boutons pour éviter de retourner la carte
@@ -208,6 +419,16 @@
                 event.stopPropagation();
             });
         });
-    </script>
-</div>
+        
+        // Smooth scrolling pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
 {% endblock %}
