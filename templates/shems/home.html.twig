@@ -3,29 +3,251 @@
 {% block title %}Accueil - {{ nom }} {{ prenom }}{% endblock %}
 
 {% block body %}
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">MAMMAD Shemseddine</h1>
-                    <h3 class="card-subtitle mb-3 text-muted">A2 </h3>
-                    <p class="card-text">Étudiant passionné par les nouvelles technologies et le développement web, je suis actuellement en formation pour obtenir un BUT en réseaux et télécommunications.</p>
+<!-- Hero Section avec fond d'image et animation -->
+<div class="hero-section">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1 class="animated fadeInDown">MAMMAD Shemseddine</h1>
+        <h3 class="animated fadeInUp delay-1">Étudiant en BUT Réseaux et Télécommunications</h3>
+        <p class="animated fadeInUp delay-2">Passionné par les nouvelles technologies et le développement web</p>
+        <div class="animated fadeInUp delay-3">
+            <a href="{{ path('app_cv') }}" class="btn btn-outline-light btn-lg mt-3 me-2">Voir mon CV</a>
+            <a href="{{ path('app_portfolio') }}" class="btn btn-primary btn-lg mt-3">Portfolio</a>
+        </div>
+    </div>
+</div>
+
+<!-- Section principale -->
+<div class="container my-5">
+    <!-- À propos -->
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h2 class="border-start border-primary border-5 ps-3">À propos de moi</h2>
+            <p class="lead mt-3">Étudiant en première année de BUT Réseaux et Télécommunications, je développe mes compétences dans les domaines suivants :</p>
+            <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item"><i class="fas fa-network-wired me-2 text-primary"></i> Configuration et maintenance de réseaux</li>
+                <li class="list-group-item"><i class="fas fa-server me-2 text-primary"></i> Administration de systèmes Linux et Windows</li>
+                <li class="list-group-item"><i class="fas fa-code me-2 text-primary"></i> Développement web et programmation</li>
+                <li class="list-group-item"><i class="fas fa-shield-alt me-2 text-primary"></i> Sécurité informatique</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="profile-card">
+                <img src="{{ asset('image/profile.jpg') }}" alt="Photo de profil" class="profile-image">
+                <div class="profile-info">
+                    <h4>MAMMAD Shemseddine</h4>
+                    <p>A2 - BUT R&T</p>
+                    <div class="profile-social">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="card">
-            <div class="card-header">
-                <h2>Pour en savoir plus</h2>
+    <!-- Cards Section -->
+    <h2 class="text-center mb-4">Explorez mon univers</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm hover-card">
+                <div class="card-body text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-laptop-code fa-3x text-primary"></i>
+                    </div>
+                    <h5 class="card-title mt-3">Portfolio</h5>
+                    <p class="card-text">Découvrez mes projets et réalisations dans le domaine des réseaux et du développement.</p>
+                    <a href="{{ path('app_portfolio') }}" class="btn btn-outline-primary mt-2">Voir plus</a>
+                </div>
             </div>
-            <div class="card-body">
-                <p>Découvrez mes passions et centres d'intérêt à travers une galerie de photos.</p>
-                <a href="{{ path('app_loisirs') }}" class="btn btn-primary">Voir mes loisirs</a>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm hover-card">
+                <div class="card-body text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+                    </div>
+                    <h5 class="card-title mt-3">Parcours</h5>
+                    <p class="card-text">Mon CV détaillé avec mes formations, compétences et expériences professionnelles.</p>
+                    <a href="{{ path('app_cv') }}" class="btn btn-outline-primary mt-2">Voir plus</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm hover-card">
+                <div class="card-body text-center">
+                    <div class="icon-box">
+                        <i class="fas fa-heart fa-3x text-primary"></i>
+                    </div>
+                    <h5 class="card-title mt-3">Loisirs</h5>
+                    <p class="card-text">Découvrez mes passions et centres d'intérêt en dehors du monde professionnel.</p>
+                    <a href="{{ path('app_loisirs') }}" class="btn btn-outline-primary mt-2">Voir plus</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    /* Hero Section */
+    .hero-section {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('image/hero-bg.jpg') }}');
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+    
+    .hero-content {
+        z-index: 2;
+        max-width: 800px;
+        padding: 2rem;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+    
+    /* Profile Card */
+    .profile-card {
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+    
+    .profile-info {
+        padding: 1.5rem;
+        flex: 1;
+    }
+    
+    .profile-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0d6efd;
+        transition: all 0.3s;
+    }
+    
+    .social-icon:hover {
+        background-color: #0d6efd;
+        color: white;
+    }
+    
+    /* Card animations */
+    .hover-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: none;
+        border-radius: 10px;
+    }
+    
+    .hover-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+    
+    .icon-box {
+        width: 80px;
+        height: 80px;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        transition: all 0.3s;
+    }
+    
+    .hover-card:hover .icon-box {
+        background-color: #0d6efd;
+        color: white;
+    }
+    
+    .hover-card:hover .icon-box i {
+        color: white !important;
+    }
+    
+    /* Animations */
+    .animated {
+        opacity: 0;
+    }
+    
+    .fadeInDown {
+        animation: fadeInDown 1s ease forwards;
+    }
+    
+    .fadeInUp {
+        animation: fadeInUp 1s ease forwards;
+    }
+    
+    .delay-1 {
+        animation-delay: 0.3s;
+    }
+    
+    .delay-2 {
+        animation-delay: 0.6s;
+    }
+    
+    .delay-3 {
+        animation-delay: 0.9s;
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<!-- Ajout des icônes Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 {% endblock %}

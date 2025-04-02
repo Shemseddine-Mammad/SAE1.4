@@ -31,7 +31,7 @@
         </div>
         <div class="card-body">
             <h5>stage de troisième</h5>
-            <h5>J'ai réalisé mon stage de troisième dans une entreprise Roannaise</h5>
+            <h5>Réalisation d'un stage d'observation dans une entreprise Roannaise</h5>
             <h5> Stériflow - 24/02/2020 : 28 /02/2020 </h5>
         </div>
     </div>
@@ -44,15 +44,14 @@
             <div class="row">
                 <div class="col-md-4">
                       <div class="progress mb-2">
-                        <div class="progress-bar" role="progressbar" style="width: 100%">Français</div>
-                        </div>
+                        <div class="progress-bar language-bar" data-width="100" role="progressbar" style="width: 0%">Français</div>
+                      </div>
                      <div class="progress mb-2">
-                        <div class="progress-bar" role="progressbar" style="width: 75%">Anglais</div>
-                        </div>
-
+                        <div class="progress-bar language-bar" data-width="75" role="progressbar" style="width: 0%">Anglais</div>
+                      </div>
                       <div class="progress mb-2">
-                        <div class="progress-bar" role="progressbar" style="width: 50%">Espagnol</div>   
-                        </div>
+                        <div class="progress-bar language-bar" data-width="50" role="progressbar" style="width: 0%">Espagnol</div>   
+                      </div>
                 </div>
             </div>
         </div>
@@ -78,9 +77,22 @@
                 <div class="modal-body">
                     <form id="cvDownloadForm">
                         <div class="mb-3">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="nom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" id="prenom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="selectedFormat" class="form-label">Format du CV</label>
                             <select class="form-select" id="selectedFormat">
                                 <option value="pdf">PDF</option>
+                                <option value="png">PNG</option> <!-- Nouvelle option pour le format PNG -->
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Télécharger</button>
@@ -94,25 +106,80 @@
 
 {% block javascripts %}
 <script>
-document.getElementById('cvDownloadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation des barres de progression pour les langues
+    setTimeout(function() {
+        const languageBars = document.querySelectorAll('.language-bar');
+        
+        languageBars.forEach(function(bar, index) {
+            const targetWidth = bar.getAttribute('data-width') + '%';
+            
+            // Animation avec délai progressif pour chaque barre
+            setTimeout(function() {
+                // Animation fluide
+                bar.style.transition = 'width 1.5s ease-in-out';
+                bar.style.width = targetWidth;
+            }, index * 300); // 300ms de délai entre chaque animation
+        });
+    }, 500); // Démarrer l'animation après 500ms du chargement de la page
     
-    const format = document.getElementById('selectedFormat').value;
-    const filePath = `/cv/CV.${format}`;
+    // Initialisation du gestionnaire de téléchargement
+    setupDownloadForm();
+});
 
-    // Crée un élément <a> temporaire pour déclencher le téléchargement
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = `cv.${format}`; // Nom du fichier téléchargé
+// Fonction pour initialiser le gestionnaire de formulaire (séparation des responsabilités)
+function setupDownloadForm() {
+    const cvDownloadForm = document.getElementById('cvDownloadForm');
     
+    if (cvDownloadForm) {
+        // On supprime d'abord tous les écouteurs existants (si présents)
+        // puis on ajoute notre nouvel écouteur
+        const newForm = cvDownloadForm.cloneNode(true);
+        cvDownloadForm.parentNode.replaceChild(newForm, cvDownloadForm);
+        
+        newForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut du formulaire
+            
+            // Récupération des valeurs du formulaire
+            const nom = document.getElementById('nom').value;
+            const prenom = document.getElementById('prenom').value;
+            const email = document.getElementById('email').value;
+            const format = document.getElementById('selectedFormat').value;
+            
+            console.log(`Téléchargement demandé par ${prenom} ${nom} (${email}) en format ${format}`);
+            
+            // Utilisation de setTimeout pour éviter les problèmes de timing
+            setTimeout(function() {
+                const filePath = `/cv/CV.${format}`;
+                downloadFile(filePath, `cv.${format}`);
+                
+                // Ferme le modal après un court délai
+                setTimeout(function() {
+                    const modalElement = document.getElementById('cvModal');
+                    const modal = bootstrap.Modal.getInstance(modalElement);
+                    if (modal) {
+                        modal.hide();
+                    }
+                }, 100);
+            }, 100);
+        });
+    }
+}
+
+// Fonction séparée pour le téléchargement
+function downloadFile(url, filename) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
-
-    // Ferme le modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById('cvModal'));
-    modal.hide();
-});
+    
+    // Suppression après un délai pour s'assurer que le téléchargement a commencé
+    setTimeout(function() {
+        document.body.removeChild(link);
+    }, 100);
+}
 </script>
 {% endblock %}
 {% endblock %}

@@ -6,21 +6,57 @@
 <div class="container mt-4">
     <h1 class="mb-4">Mes Loisirs</h1>
     
+    <style>
+        /* Styles pour l'animation des cartes */
+        .hobby-card {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 0.8s ease-out;
+        }
+        
+        .hobby-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animation de survol pour les cartes */
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid #dee2e6; /* Contour plus épais */
+            border-radius: 8px; /* Légèrement arrondir les coins */
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            border-color: #6c757d; /* Contour plus foncé au survol */
+        }
+        
+        /* Pour s'assurer que l'image reste à taille raisonnable */
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #dee2e6; /* Séparation entre image et contenu */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    </style>
+    
     <div class="row">
         <!-- Carte pour le premier loisir -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 hobby-card">
             <div class="card h-100">
                 <img src="{{ asset('image/logo_tkd.png') }}" class="card-img-top" alt="loisir 1">
                 <div class="card-body">
                     <h5 class="card-title">Taekwondo</h5>
-                    <p class="card-text">Depuis petit j'ai toujours pratiqué des sports de combats comme le Taekwondo ou le Grappling </p>
-                    <p Cela fait 9 ans que je pratique le Taekwondo p>
+                    <p class="card-text">Depuis petit j'ai toujours pratiqué des sports de combats comme le Taekwondo ou le Grappling.</p>
+                    <p>Cela fait 9 ans que je pratique le Taekwondo.</p>
                 </div>
             </div>
         </div>
 
         <!-- Carte pour le deuxième loisir -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 hobby-card">
             <div class="card h-100">
                 <img src="{{ asset('image/voyage.jpg') }}" class="card-img-top" alt="loisir 2">
                 <div class="card-body">
@@ -31,15 +67,32 @@
         </div>
 
         <!-- Carte pour le troisième loisir -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 hobby-card">
             <div class="card h-100">
-                <img src="{{ asset('image/jeu-video-visu.jpg') }}"class="card-img-top" alt="loisir 3">
+                <img src="{{ asset('image/jeu-video-visu.jpg') }}" class="card-img-top" alt="loisir 3">
                 <div class="card-body">
                     <h5 class="card-title">Jeux vidéos</h5>
-                    <p class="card-text">Passionné par les jeux vidéo, j’aime plonger dans des univers immersifs, relever des défis captivants et partager des expériences avec d'autres joueurs.</p>
+                    <p class="card-text">Passionné par les jeux vidéo, j'aime plonger dans des univers immersifs, relever des défis captivants et partager des expériences avec d'autres joueurs.</p>
                 </div>
             </div>
         </div>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionne toutes les cartes de loisir
+            const hobbyCards = document.querySelectorAll('.hobby-card');
+            
+            // Attendre un court instant avant de commencer l'animation
+            setTimeout(function() {
+                // Animer chaque carte avec un délai
+                hobbyCards.forEach(function(card, index) {
+                    setTimeout(function() {
+                        card.classList.add('visible');
+                    }, index * 300); // 300ms de délai entre chaque carte
+                });
+            }, 200); // Démarrer après 200ms
+        });
+    </script>
 </div>
 {% endblock %}
