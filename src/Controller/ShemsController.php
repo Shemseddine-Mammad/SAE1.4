@@ -35,4 +35,10 @@ class ShemsController extends AbstractController
     {
         return $this->render('shems/loisirs.html.twig');
     }
+    #[Route('/parcours', name: 'app_parcours')]
+    public function parcours(): Response
+    {
+        return $this->render('shems/parcours.html.twig');
+    }
+
 }
