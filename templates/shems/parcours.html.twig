@@ -10,7 +10,7 @@
             <div class="col-lg-10 text-center">
                 <h1 class="display-4 fw-bold mb-3">Mes Projets</h1>
                 <h2 class="h3 text-primary mb-4">Découvrez mes réalisations techniques</h2>
-                <p class="lead mb-4">Une sélection de projets et travaux réalisés dans le cadre de ma formation en Réseaux et Télécommunications.</p>
+                <p class="lead mb-4">Une sélection de projets, travaux réalisés et compétances dans le cadre de ma formation en Réseaux et Télécommunications pour pouvoir poursuivre en cybersécurité.</p>
                 <a href="#projets-recents" class="btn btn-primary btn-lg">Voir les projets</a>
             </div>
         </div>
@@ -32,21 +32,17 @@
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center mb-3">
                                     <i class="bi bi-check-circle-fill text-primary me-2 fs-5"></i>
-                                    <span>Projets académiques et personnels</span>
+                                    <span>Simulation d'une topologie réseau d'une entreprise</span>
                                 </div>
                                 <div class="d-flex align-items-center mb-3">
                                     <i class="bi bi-check-circle-fill text-primary me-2 fs-5"></i>
-                                    <span>Solutions techniques documentées</span>
+                                    <span>Analyseur de trame réseau</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center mb-3">
                                     <i class="bi bi-check-circle-fill text-primary me-2 fs-5"></i>
-                                    <span>Applications pratiques des compétences</span>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <i class="bi bi-check-circle-fill text-primary me-2 fs-5"></i>
-                                    <span>Démonstration de ma progression</span>
+                                    <span>Sensibilisation à l'hygiène informatique et à la cybersécurité</span>
                                 </div>
                             </div>
                         </div>
@@ -69,20 +65,18 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="project-image rounded overflow-hidden">
-                                <img src="{{ asset('images/projet-reseau.jpg') }}" alt="Projet Infrastructure Réseau" class="img-fluid">
+                                <img src="{{ asset('preuve/SAE1-02.png') }}" alt="Projet Infrastructure Réseau" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-7">
-                            <h3 class="h4 mb-3">Infrastructure Réseau Campus Virtuel</h3>
+                            <h3 class="h4 mb-3">Topologie réseau d'une entreprise</h3>
                             <div class="mb-3">
                                 <span class="badge bg-secondary me-2">Cisco Packet Tracer</span>
                                 <span class="badge bg-secondary me-2">VLAN</span>
-                                <span class="badge bg-secondary me-2">Routage</span>
                             </div>
-                            <p>Conception et mise en place d'une infrastructure réseau complète pour un campus virtuel comportant plusieurs bâtiments. Implémentation de VLANs, routage inter-VLAN, sécurisation des accès et optimisation des performances.</p>
+                            <p>Conception d'une infrastructure réseau pour une entreprise comportant plusieurs services. Implémentation de VLANs, sécurisation des accès et optimisation des performances, contrôle à distance.</p>
                             <div class="mt-4">
-                                <a href="#" class="btn btn-outline-primary me-2">Détails du projet</a>
-                                <a href="#" class="btn btn-sm btn-link text-primary"><i class="bi bi-github me-1"></i> Voir le code</a>
+                                <a href="{{ asset('preuve/compte-rendu-technique.pdf') }}" class="btn btn-outline-primary me-2" target="_blank">Détails du projet</a>
                             </div>
                         </div>
                     </div>
@@ -93,22 +87,20 @@
                     <div class="row flex-md-row-reverse">
                         <div class="col-md-5">
                             <div class="project-image rounded overflow-hidden">
-                                <img src="{{ asset('images/projet-serveur.jpg') }}" alt="Serveur Linux" class="img-fluid">
+                                <img src="{{ asset('preuve/rapport.png') }}" alt="Serveur Linux" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-7">
-                            <h3 class="h4 mb-3">Déploiement de Services sur Serveur Linux</h3>
+                            <h3 class="h4 mb-3">Analyseur de trame réseau</h3>
                             <div class="mb-3">
-                                <span class="badge bg-secondary me-2">Ubuntu Server</span>
-                                <span class="badge bg-secondary me-2">Apache</span>
-                                <span class="badge bg-secondary me-2">MySQL</span>
-                                <span class="badge bg-secondary me-2">Shell</span>
+                                <span class="badge bg-secondary me-2">Github</span>
+                                <span class="badge bg-secondary me-2">VScode</span>
+                                <span class="badge bg-secondary me-2">PythonL</span>
                             </div>
-                            <p>Installation et configuration d'un serveur LAMP (Linux, Apache, MySQL, PHP) avec services DNS, DHCP et FTP. Création de scripts de maintenance et de sauvegarde automatisée. Mise en place de mesures de sécurité et de monitoring.</p>
+                            <p>Script Python analyse le trafic réseau capturé dans des fichiers .txt générés par des outils comme tcpdump. Il détecte les anomalies, génère des rapports statistiques et visualise la distribution des protocoles à travers des graphiques. Les résultats sont présentés dans des formats HTML et CSV pour une analyse détaillée.</p>
                             <div class="mt-4">
-                                <a href="#" class="btn btn-outline-primary me-2">Détails du projet</a>
-                                <a href="#" class="btn btn-sm btn-link text-primary"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
-                            </div>
+                                <a href="{{ asset('preuve/Notice.pdf') }}" class="btn btn-outline-primary me-2" target="_blank">Détails du projet</a>
+                                <a href="https://github.com/Shemseddine-Mammad/SAE105" class="btn btn-sm btn-link text-primary" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-text me-1"></i> Voir le code</a>                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,20 +110,14 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="project-image rounded overflow-hidden">
-                                <img src="{{ asset('images/projet-python.jpg') }}" alt="Application Python" class="img-fluid">
+                                <img src="{{ asset('preuve/certif.png') }}" alt="Application Python" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-7">
-                            <h3 class="h4 mb-3">Outil de Monitoring Réseau en Python</h3>
-                            <div class="mb-3">
-                                <span class="badge bg-secondary me-2">Python</span>
-                                <span class="badge bg-secondary me-2">SNMP</span>
-                                <span class="badge bg-secondary me-2">Tkinter</span>
-                            </div>
-                            <p>Développement d'une application Python pour surveiller le trafic réseau, détecter les anomalies et générer des alertes. Interface graphique réalisée avec Tkinter, génération de rapports et visualisation de données en temps réel.</p>
+                            <h3 class="h4 mb-3">Sensibilisation à l'hygiène informatique et à la cybersécurité</h3>
+                            <p>Sensibilisation visant à minimiser les risques de cyberattaques en adoptant des gestes simples et des pratiques sécurisées au quotidien. L'objectif est de renforcer la vigilance et de promouvoir des comportements responsables pour protéger efficacement les données et les systèmes informatiques.</p>
                             <div class="mt-4">
-                                <a href="#" class="btn btn-outline-primary me-2">Détails du projet</a>
-                                <a href="#" class="btn btn-sm btn-link text-primary"><i class="bi bi-github me-1"></i> Voir le code</a>
+                                <a href="{{ asset('preuve/diapo-sae.pdf') }}" class="btn btn-outline-primary me-2" target="_blank">Détails du projet</a>
                             </div>
                         </div>
                     </div>
@@ -140,28 +126,30 @@
         </div>
     </section>
     
-    <!-- Projets Académiques -->
+    <!-- apprentissages critiques -->
     <section class="mb-5">
         <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
                 <h2 class="section-title position-relative pb-3 mb-4">
-                    <span class="badge bg-primary me-2">03</span>Projets Académiques
+                    <span class="badge bg-primary me-2">03</span>Apprentissages critiques
                 </h2>
                 
                 <div class="row">
-                    <!-- Projet Académique 1 -->
+                    <!-- AC11-3 -->
                     <div class="col-md-6 mb-4">
                         <div class="academic-project h-100 border rounded p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <span class="project-icon d-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-3">
-                                    <i class="bi bi-diagram-3"></i>
-                                </span>
-                                <h4 class="h5 m-0">Configuration de VLAN</h4>
+                                <div class="project-icon-wrapper me-3">
+                                    <span class="project-icon d-flex align-items-center justify-content-center bg-primary text-white">
+                                        <i class="bi bi-diagram-3"></i>
+                                    </span>
+                                </div>
+                                <h4 class="h5 m-0">Configurer les fonctions de base du réseau local</h4>
                             </div>
-                            <p class="mb-3">Mise en place de VLANs sur des commutateurs Cisco pour segmenter un réseau départemental avec implémentation de sécurité par ports.</p>
+                            <p class="mb-3">Configurer les fonctions de base du réseau local consiste à paramétrer les éléments essentiels comme les VLANs, les protocoles de routage et les mécanismes de sécurité pour assurer le bon fonctionnement d'un réseau informatique local.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">Semestre 1 - RT1</small>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Voir plus</a>
+                                <a href="{{ asset('preuve/AC11-03.pdf') }}" class="btn btn-sm btn-outline-primary" target="_blank">Preuves</a>
+                                <a href="{{ asset('preuve/AC11-03-analyse.pdf') }}" class="btn btn-sm btn-outline-primary" target="_blank">Analyse reflective</a>
                             </div>
                         </div>
                     </div>
@@ -170,15 +158,17 @@
                     <div class="col-md-6 mb-4">
                         <div class="academic-project h-100 border rounded p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <span class="project-icon d-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-3">
-                                    <i class="bi bi-shield-lock"></i>
-                                </span>
-                                <h4 class="h5 m-0">Sécurisation d'Active Directory</h4>
+                                <div class="project-icon-wrapper me-3">
+                                    <span class="project-icon d-flex align-items-center justify-content-center bg-primary text-white">
+                                        <i class="bi bi-shield-lock"></i>
+                                    </span>
+                                </div>
+                                <h4 class="h5 m-0">Maîtriser les bases des systèmes d'exploitation pour configurer et gérer les réseaux et services.</h4>
                             </div>
-                            <p class="mb-3">Configuration d'un domaine Active Directory avec stratégies de groupe (GPO) pour sécuriser un parc informatique d'entreprise.</p>
+                            <p class="mb-3">Maîtriser les bases des systèmes d'exploitation pour configurer et gérer les réseaux et services implique la compréhension des fondamentaux comme la gestion des utilisateurs, les processus système, ainsi que les outils de configuration réseau. Cette compétence permet d'installer, configurer et administrer efficacement les services réseau essentiels tels que DNS et les serveurs web.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">Semestre 2 - RT1</small>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Voir plus</a>
+                                <a href="{{ asset('preuve/AC11-04.pdf') }}" class="btn btn-sm btn-outline-primary" target="_blank">Preuves</a>
+                                <a href="{{ asset('preuve/AC11-04-analyse.pdf') }}" class="btn btn-sm btn-outline-primary" target="_blank">Analyse reflective</a>
                             </div>
                         </div>
                     </div>
@@ -187,32 +177,17 @@
                     <div class="col-md-6 mb-4">
                         <div class="academic-project h-100 border rounded p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <span class="project-icon d-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-3">
-                                    <i class="bi bi-globe"></i>
-                                </span>
-                                <h4 class="h5 m-0">Configuration DNS et DHCP</h4>
+                                <div class="project-icon-wrapper me-3">
+                                    <span class="project-icon d-flex align-items-center justify-content-center bg-primary text-white">
+                                        <i class="bi bi-globe"></i>
+                                    </span>
+                                </div>
+                                <h4 class="h5 m-0">Savoir identifier les dysfonctionnements du réseau local.</h4>
                             </div>
-                            <p class="mb-3">Installation et paramétrage de serveurs DNS et DHCP sous Linux avec redondance et réplication pour assurer la haute disponibilité.</p>
+                            <p class="mb-3">Savoir identifier les dysfonctionnements du réseau local implique la maîtrise des outils de diagnostic réseau, la compréhension des protocoles de communication et la capacité à détecter les anomalies de performance. Cette compétence essentielle permet de localiser rapidement les pannes, d'analyser les problèmes de connectivité et de mettre en œuvre les solutions appropriées pour maintenir un fonctionnement optimal de l'infrastructure réseau.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">Semestre 2 - RT1</small>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Voir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Projet Académique 4 -->
-                    <div class="col-md-6 mb-4">
-                        <div class="academic-project h-100 border rounded p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="project-icon d-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-3">
-                                    <i class="bi bi-code-square"></i>
-                                </span>
-                                <h4 class="h5 m-0">Script d'Automatisation Bash</h4>
-                            </div>
-                            <p class="mb-3">Développement de scripts Bash pour automatiser des tâches d'administration système comme les sauvegardes, la surveillance et les mises à jour.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">Semestre 3 - RT2</small>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Voir plus</a>
+                                <a href="{{ asset('preuve/AC11-05.pdf') }}" class="btn btn-sm btn-outline-primary" target="_blank">Preuves</a>
+                                <a href="{{ asset('preuve/AC11-05-analyse.pdf') }}" class="btn btn-sm btn-outline-primary" target="_blank">Analyse reflective</a>
                             </div>
                         </div>
                     </div>
@@ -278,10 +253,21 @@
         transform: translateY(-5px);
     }
     
+    .project-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+    
     .project-icon {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
         font-size: 1.2rem;
+    }
+    
+    .academic-project h4 {
+        line-height: 1.4;
     }
     
     /* Technologies */
