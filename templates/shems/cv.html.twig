@@ -24,6 +24,20 @@
         </div>
     </div>
 
+    <!-- Style pour harmoniser les barres de progression avec le portfolio -->
+    <style>
+        .progress {
+            height: 10px;
+            background-color: #e9ecef;
+        }
+        
+        .language-bar {
+            background-color: #0d6efd;
+            transition: width 1.5s ease-in-out;
+            height: 100%;
+        }
+    </style>
+
     <!-- Main Content Sections -->
     <div class="row">
         <div class="col-lg-8">
@@ -189,9 +203,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Animation avec délai progressif pour chaque barre
             setTimeout(function() {
                 // Animation fluide
-                bar.style.transition = 'width 1.5s ease-in-out';
                 bar.style.width = targetWidth;
-            }, index * 300); // 300ms de délai entre chaque animation
+            }, index * 200); // 200ms de délai entre chaque animation (comme dans portfolio)
         });
     }, 500); // Démarrer l'animation après 500ms du chargement de la page
     

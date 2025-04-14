@@ -3,14 +3,14 @@
 {% block title %}Mes Projets - Shemseddine MAMMAD{% endblock %}
 
 {% block body %}
-<!-- Hero Section -->
+<!-- Hero Section with white text -->
 <div class="hero-section position-relative bg-dark text-white py-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <h1 class="display-4 fw-bold mb-3">Mes Projets</h1>
+                <h1 class="display-4 fw-bold mb-3 text-white">Mes Projets</h1>
                 <h2 class="h3 text-primary mb-4">Découvrez mes réalisations techniques</h2>
-                <p class="lead mb-4">Une sélection de projets, travaux réalisés et compétances dans le cadre de ma formation en Réseaux et Télécommunications pour pouvoir poursuivre en cybersécurité.</p>
+                <p class="lead mb-4 text-white">Une sélection de projets, travaux réalisés et compétances dans le cadre de ma formation en Réseaux et Télécommunications pour pouvoir poursuivre en cybersécurité.</p>
                 <a href="#projets-recents" class="btn btn-primary btn-lg">Voir les projets</a>
             </div>
         </div>
@@ -95,7 +95,7 @@
                             <div class="mb-3">
                                 <span class="badge bg-secondary me-2">Github</span>
                                 <span class="badge bg-secondary me-2">VScode</span>
-                                <span class="badge bg-secondary me-2">PythonL</span>
+                                <span class="badge bg-secondary me-2">Python</span>
                             </div>
                             <p>Script Python analyse le trafic réseau capturé dans des fichiers .txt générés par des outils comme tcpdump. Il détecte les anomalies, génère des rapports statistiques et visualise la distribution des protocoles à travers des graphiques. Les résultats sont présentés dans des formats HTML et CSV pour une analyse détaillée.</p>
                             <div class="mt-4">
@@ -214,6 +214,19 @@
     .hero-section {
         background: linear-gradient(135deg, #000000 0%, #212529 100%);
         padding: 100px 0;
+        color: white !important;
+    }
+    
+    .hero-section * {
+        color: white;
+    }
+    
+    .hero-section h2.h3 {
+        color: #0d6efd !important; /* Garde le sous-titre en bleu */
+    }
+    
+    .hero-section .border {
+        border-color: rgba(255, 255, 255, 0.1) !important;
     }
     
     /* Section titles */

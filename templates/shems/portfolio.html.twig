@@ -3,14 +3,14 @@
 {% block title %}Mon Portfolio - Shemseddine MAMMAD{% endblock %}
 
 {% block body %}
-<!-- Hero Section - Redesigned without profile photo -->
+<!-- Hero Section -->
 <div class="hero-section position-relative bg-dark text-white py-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <h1 class="display-4 fw-bold mb-3">Shemseddine MAMMAD</h1>
+                <h1 class="display-4 fw-bold mb-3 text-white">Shemseddine MAMMAD</h1>
                 <h2 class="h3 text-primary mb-4">Étudiant en Réseaux et Télécommunications</h2>
-                <p class="lead mb-4">Portfolio professionnel présentant mes compétences, projets et parcours dans le domaine des réseaux et systèmes informatiques.</p>
+                <p class="lead mb-4 text-white">Portfolio professionnel présentant mes compétences, projets et parcours dans le domaine des réseaux et systèmes informatiques.</p>
                 <a href="#competences" class="btn btn-primary btn-lg">Découvrir mes compétences</a>
             </div>
         </div>
@@ -273,6 +273,23 @@
     .hero-section {
         background: linear-gradient(135deg, #000000 0%, #212529 100%);
         padding: 100px 0; /* Increased padding to compensate for removed photo */
+    }
+    
+    /* Ensure all text in hero section is white except where explicitly styled otherwise */
+    .hero-section {
+        color: white !important;
+    }
+    
+    .hero-section * {
+        color: white;
+    }
+    
+    .hero-section h2.h3 {
+        color: #0d6efd !important; /* Garde le sous-titre en bleu */
+    }
+    
+    .hero-section .btn {
+        /* Preserve button styling */
     }
     
     /* Section titles */
