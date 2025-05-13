@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="profile-card">
-                <img src="{{ asset('image/profile.jpg') }}" alt="Photo de profil" class="profile-image">
+                <img src="{{ asset('image/picture.jpg') }}" alt="Photo de profil" class="profile-image">
                 <div class="profile-info">
                     <h4>MAMMAD Shemseddine</h4>
                     <p>A2 - BUT R&T</p>
@@ -198,6 +198,7 @@
         width: 150px;
         height: 150px;
         object-fit: cover;
+        object-position: center top; /* Ajout de cette propriété pour recadrer sur le haut */
     }
     
     .profile-info {

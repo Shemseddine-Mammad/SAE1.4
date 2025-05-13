@@ -7,9 +7,10 @@
     <!-- Profile Header -->
     <div class="row mb-5">
         <div class="col-md-4 text-center">
-            <!-- Replace with your actual photo path -->
-            <img src="{{ asset('images/profile-photo.jpg') }}" alt="Photo de profil" 
-                 class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
+            <div style="width: 210px; height: 210px; margin: 0 auto; border-radius: 50%; border: none; overflow: hidden; display: flex; align-items: flex-start; justify-content: center;">
+                <img src="{{ asset('image/picture.jpg') }}" alt="Photo de profil" 
+                     style="width: 100%; height: auto; object-fit: cover; object-position: center 0%;">
+            </div>
         </div>
         <div class="col-md-8">
             <h1 class="display-4 fw-bold">MAMMAD Shemseddine</h1>
