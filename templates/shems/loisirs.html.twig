@@ -5,11 +5,12 @@
 {% block body %}
 <!-- Hero Section -->
 <div class="hero-section position-relative bg-dark text-white py-5">
+    <div class="overlay"></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-                <h1 class="display-4 fw-bold text-white mb-3">Mes Passions</h1>
-                <p class="lead text-white mb-4">Découvrez ce qui me passionne en dehors du monde professionnel</p>
+                <h1 class="display-4 fw-bold text-white mb-3 animated fadeInDown">Mes Passions</h1>
+                <p class="lead text-white mb-4 animated fadeInUp delay-1">Découvrez ce qui me passionne en dehors du monde professionnel</p>
             </div>
         </div>
     </div>
@@ -41,7 +42,6 @@
                     </div>
                     <p class="card-text">Depuis petit j'ai toujours pratiqué des sports de combats comme le Taekwondo ou le Grappling. Cette discipline m'a enseigné la persévérance, le respect et la maîtrise de soi.</p>
                 </div>
-                <!-- Suppression de la bande (card-footer) -->
             </div>
         </div>
 
@@ -61,7 +61,6 @@
                     </div>
                     <p class="card-text">Passionné par les découvertes, j'adore voyager pour découvrir de nouvelles cultures, m'immerger dans différentes traditions et élargir mes perspectives sur le monde.</p>
                 </div>
-                <!-- Suppression de la bande (card-footer) -->
             </div>
         </div>
 
@@ -81,37 +80,25 @@
                     </div>
                     <p class="card-text">Passionné par les jeux vidéo, j'aime plonger dans des univers immersifs, relever des défis captivants et partager des expériences avec d'autres joueurs du monde entier.</p>
                 </div>
-                <!-- Suppression de la bande (card-footer) -->
             </div>
         </div>
     </div>
+
 <style>
-    /* Hero Section - Harmonisé avec les autres pages */
+    /* Hero Section - Même style que la page home */
     .hero-section {
-        background: linear-gradient(135deg, #000000 0%, #212529 100%);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ asset('image/hero-bg.jpg') }}');
+        background-size: cover;
+        background-position: center;
         padding: 100px 0;
         position: relative;
         overflow: hidden;
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
     }
-    
-    .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('{{ asset('image/hobbies-pattern.png') }}') repeat;
-        opacity: 0.1;
-        z-index: 0;
-    }
-    
-    .hero-section > .container {
-        position: relative;
-        z-index: 1;
-    }
-    
-    /* Ensure all text in hero section is white */
+
+    /* S'assurer que tout le texte dans hero section est blanc */
     .hero-section {
         color: white !important;
     }
@@ -120,28 +107,59 @@
         color: white;
     }
     
-    /* Hero Banner Background */
-    .hobby-banner {
-        background: linear-gradient(to right, #343a40, #495057);
-        position: relative;
-        overflow: hidden;
+    .hero-section h2.h3 {
+        color: #0d6efd !important;
     }
     
-    .hobby-banner::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('{{ asset('image/hobbies-pattern.png') }}') repeat;
-        opacity: 0.1;
-        z-index: 0;
+    .hero-section .btn-primary {
+        /* Préserve le style du bouton primary */
+    }
+
+    /* Animations du Hero Section */
+    .animated {
+        opacity: 0;
     }
     
-    .hobby-banner > .container {
-        position: relative;
-        z-index: 1;
+    .fadeInDown {
+        animation: fadeInDown 1s ease forwards;
+    }
+    
+    .fadeInUp {
+        animation: fadeInUp 1s ease forwards;
+    }
+    
+    .delay-1 {
+        animation-delay: 0.3s;
+    }
+    
+    .delay-2 {
+        animation-delay: 0.6s;
+    }
+    
+    .delay-3 {
+        animation-delay: 0.9s;
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     /* Card styling */

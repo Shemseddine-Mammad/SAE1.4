@@ -5,13 +5,16 @@
 {% block body %}
 <!-- Hero Section -->
 <div class="hero-section position-relative bg-dark text-white py-5">
+    <div class="overlay"></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <h1 class="display-4 fw-bold mb-3 text-white">Shemseddine MAMMAD</h1>
-                <h2 class="h3 text-primary mb-4">Étudiant en Réseaux et Télécommunications</h2>
-                <p class="lead mb-4 text-white">Portfolio professionnel présentant mes compétences, projets et parcours dans le domaine des réseaux et systèmes informatiques.</p>
-                <a href="#competences" class="btn btn-primary btn-lg">Découvrir mes compétences</a>
+                <h1 class="display-4 fw-bold mb-3 text-white animated fadeInDown">Shemseddine MAMMAD</h1>
+                <h2 class="h3 text-primary mb-4 animated fadeInUp delay-1">Étudiant en Réseaux et Télécommunications</h2>
+                <p class="lead mb-4 text-white animated fadeInUp delay-2">Portfolio professionnel présentant mes compétences, projets et parcours dans le domaine des réseaux et systèmes informatiques.</p>
+                <div class="animated fadeInUp delay-3">
+                    <a href="#competences" class="btn btn-primary btn-lg">Découvrir mes compétences</a>
+                </div>
             </div>
         </div>
     </div>
@@ -287,13 +290,20 @@
 
 <!-- Style pour les cartes qui se retournent et les animations -->
 <style>
-    /* Hero Section - Updated for centered content without photo */
+    /* Hero Section - Même style que la page home */
     .hero-section {
-        background: linear-gradient(135deg, #000000 0%, #212529 100%);
-        padding: 100px 0; /* Increased padding to compensate for removed photo */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ asset('image/hero-bg.jpg') }}');
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
     }
-    
-    /* Ensure all text in hero section is white except where explicitly styled otherwise */
+
+    /* S'assurer que tout le texte dans hero section est blanc */
     .hero-section {
         color: white !important;
     }
@@ -306,8 +316,55 @@
         color: #0d6efd !important; /* Garde le sous-titre en bleu */
     }
     
-    .hero-section .btn {
-        /* Preserve button styling */
+    .hero-section .btn-primary {
+        /* Préserve le style du bouton primary */
+    }
+
+    /* Animations du Hero Section */
+    .animated {
+        opacity: 0;
+    }
+    
+    .fadeInDown {
+        animation: fadeInDown 1s ease forwards;
+    }
+    
+    .fadeInUp {
+        animation: fadeInUp 1s ease forwards;
+    }
+    
+    .delay-1 {
+        animation-delay: 0.3s;
+    }
+    
+    .delay-2 {
+        animation-delay: 0.6s;
+    }
+    
+    .delay-3 {
+        animation-delay: 0.9s;
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     /* Section titles */

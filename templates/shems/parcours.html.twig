@@ -3,15 +3,18 @@
 {% block title %}Mes Projets - Shemseddine MAMMAD{% endblock %}
 
 {% block body %}
-<!-- Hero Section with white text -->
+<!-- Hero Section -->
 <div class="hero-section position-relative bg-dark text-white py-5">
+    <div class="overlay"></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <h1 class="display-4 fw-bold mb-3 text-white">Mes Projets</h1>
-                <h2 class="h3 text-primary mb-4">Découvrez mes réalisations techniques</h2>
-                <p class="lead mb-4 text-white">Une sélection de projets, travaux réalisés et compétances dans le cadre de ma formation en Réseaux et Télécommunications pour pouvoir poursuivre en cybersécurité.</p>
-                <a href="#projets-recents" class="btn btn-primary btn-lg">Voir les projets</a>
+                <h1 class="display-4 fw-bold mb-3 text-white animated fadeInDown">Mes Projets</h1>
+                <h2 class="h3 text-primary mb-4 animated fadeInUp delay-1">Découvrez mes réalisations techniques</h2>
+                <p class="lead mb-4 text-white animated fadeInUp delay-2">Une sélection de projets, travaux réalisés et compétances dans le cadre de ma formation en Réseaux et Télécommunications pour pouvoir poursuivre en cybersécurité.</p>
+                <div class="animated fadeInUp delay-3">
+                    <a href="#projets-recents" class="btn btn-primary btn-lg">Voir les projets</a>
+                </div>
             </div>
         </div>
     </div>
@@ -202,7 +205,7 @@
             <div class="card-body p-4 text-center">
                 <h2 class="mb-3">Intéressé par mes projets?</h2>
                 <p class="lead mb-4">N'hésitez pas à me contacter pour discuter de collaborations ou pour en savoir plus sur mes réalisations.</p>
-                <a href="{{ path('app_portfolio') }}#contact" class="btn btn-light btn-lg">Me contacter</a>
+                <a href="{{ path('app_portfolio') }}#mb-5" class="btn btn-light btn-lg">Me contacter</a>
             </div>
         </div>
     </section>
@@ -210,10 +213,21 @@
 
 <!-- Style pour les éléments spécifiques de la page projets -->
 <style>
-    /* Hero Section */
+    /* Hero Section - Même style que la page home */
     .hero-section {
-        background: linear-gradient(135deg, #000000 0%, #212529 100%);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ asset('image/hero-bg.jpg') }}');
+        background-size: cover;
+        background-position: center;
         padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* S'assurer que tout le texte dans hero section est blanc */
+    .hero-section {
         color: white !important;
     }
     
@@ -223,6 +237,57 @@
     
     .hero-section h2.h3 {
         color: #0d6efd !important; /* Garde le sous-titre en bleu */
+    }
+    
+    .hero-section .btn-primary {
+        /* Préserve le style du bouton primary */
+    }
+
+    /* Animations du Hero Section */
+    .animated {
+        opacity: 0;
+    }
+    
+    .fadeInDown {
+        animation: fadeInDown 1s ease forwards;
+    }
+    
+    .fadeInUp {
+        animation: fadeInUp 1s ease forwards;
+    }
+    
+    .delay-1 {
+        animation-delay: 0.3s;
+    }
+    
+    .delay-2 {
+        animation-delay: 0.6s;
+    }
+    
+    .delay-3 {
+        animation-delay: 0.9s;
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .hero-section .border {
